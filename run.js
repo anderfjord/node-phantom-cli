@@ -63,16 +63,16 @@ var main = function () {
         case 'create_repo':
             prompt.get([{
                     name: 'username',
-                    description: 'GitHub username',
+                    description: 'Enter GitHub username',
                     required: true
                 }, {
                     name: 'password',
-                    description: 'GitHub password',
+                    description: 'Enter GitHub password',
                     hidden: true,
                     required: true
                 }, {
                     name: 'repository',
-                    description: 'Repository name',
+                    description: 'Enter repository name',
                     required: true
             }], function (err, result) {
                 performAction(phantomInstance, result.username, result.password, result.repository);
@@ -82,7 +82,7 @@ var main = function () {
         case 'take_screenshot':
             prompt.get([{
                     name: 'url',
-                    description: 'URL to take screenshot of',
+                    description: 'Enter URL to take screenshot of',
                     required: true,
                     conform: function (value) {
                         return validUrl.isWebUri(value);
@@ -95,7 +95,7 @@ var main = function () {
         case 'get_links':
             prompt.get([{
                     name: 'url',
-                    description: 'URL to gather links from',
+                    description: 'Enter URL to gather links from',
                     required: true,
                     conform: function (value) {
                         return validUrl.isWebUri(value);
