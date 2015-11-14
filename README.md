@@ -27,18 +27,18 @@ Usage
 
 $ node run.js -x create_repo
 
-`prompt: GitHub username: <enter GitHub username>`
+> `prompt: GitHub username: <enter GitHub username>`
 
-`prompt: GitHub password: <enter GitHub password> (does not display)`
+> `prompt: GitHub password: <enter GitHub password> (does not display)`
 
-`prompt: Repository name: <enter name of new repository>`
+> `prompt: Repository name: <enter name of new repository>`
 
 
 $ node run.js -x get_links
 
-`prompt: URL to gather links from: <enter valid url>`
+> `prompt: URL to gather links from: <enter valid url>`
 
 
 $ node run.js -x take_screenshot
 
-`prompt: URL to take screenshot of: <enter valid url>`
+> `prompt: URL to take screenshot of: <enter valid url>`
