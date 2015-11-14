@@ -1,0 +1,6 @@
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
+
+# We want to include this directory in the repo, but ignore any file that it contains.
