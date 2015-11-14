@@ -1,7 +1,7 @@
 {
-  "name": "utility-crawler",
+  "name": "node-phantom-util",
   "version": "0.1.0",
-  "description": "Utility Crawl",
+  "description": "Phantom Utility Crawler",
   "keywords": [
     "crawling",
     "phantomjs"
