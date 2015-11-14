@@ -41,4 +41,4 @@ $ node run.js -x get_links
 
 $ node run.js -x take_screenshot
 
-`prompt: URL to gather links from: <enter valid url>`
+`prompt: URL to take screenshot of: <enter valid url>`
