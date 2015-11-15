@@ -19,18 +19,20 @@ module.exports = function (phantomInstance, url) {
     .status()
     .then(function (statusCode) {
       console.log('HTTP status code: ', statusCode);
+      if (Number(statusCode) >= 400) {
+        throw 'Page failed with status: ' + statusCode;
+      }
     })
 
     // Interact with the page. This code is run in the browser.
     .evaluate(function () {
+      $ = window.$ || window.jQuery;
       
       // Return a single result object with properties for 
       // whatever intelligence you want to derive from the page
       var result = {
         links: []
       };
-
-      $ = window.$ || window.jQuery;
 
       if ($) {
         $('a').each(function (i, el) {
@@ -59,6 +61,10 @@ module.exports = function (phantomInstance, url) {
     })
     .then(function (result) {
       console.log('Success! Here are the derived links: \n', result.links);
+    })
+
+    .catch(function (err) {
+      console.log('Error getting links: ', err);
     })
 
     // Always close the Horseman instance, or you might end up with orphaned phantom processes

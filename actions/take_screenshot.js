@@ -25,6 +25,9 @@ module.exports = function (phantomInstance, url) {
     .status()
     .then(function (statusCode) {
       console.log('HTTP status code: ', statusCode);
+      if (Number(statusCode) >= 400) {
+        throw 'Page failed with status: ' + statusCode;
+      }
     })
 
     // Take the screenshot
@@ -32,7 +35,7 @@ module.exports = function (phantomInstance, url) {
 
     // Save the screenshot to a file
     .then(function (screenshotBase64) {
-      
+
       // Name the file based on a sha1 hash of the url
       var urlSha1 = crypto.createHash('sha1').update(url).digest('hex')
         , filePath = 'screenshots/' + urlSha1 + '.base64.png.txt';
@@ -43,6 +46,10 @@ module.exports = function (phantomInstance, url) {
         }
         console.log('Success! You should now have a new screenshot at: ', filePath);
       });
+    })
+
+    .catch(function (err) {
+      console.log('Error taking screenshot: ', err);
     })
 
     // Always close the Horseman instance, or you might end up with orphaned phantom processes
