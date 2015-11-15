@@ -41,11 +41,11 @@ var loadPhantomInstance = function () {
   var phantomInstance = new Horseman(options);
   
   phantomInstance.on('consoleMessage', function (msg) {
-    console.log('Phantom page log: ', msg);
+    // console.log('Phantom page log: ', msg);
   });
 
   phantomInstance.on('error', function (msg) {
-    console.log('Phantom page error: ', msg);
+    // console.log('Phantom page error: ', msg);
   });
 
   return phantomInstance;
