@@ -1,7 +1,7 @@
 
 Provides a utility framework for actions that involve crawling
 
-Requirements -- tested version
+Requirements
 ============
 * [PhantomJS](http://phantomjs.org) -- v2.0.0
 * [Node.js](http://nodejs.org/) -- v0.12.7
