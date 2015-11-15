@@ -73,6 +73,10 @@ var main = function () {
 
     case 'create_repo':
       prompt.get([{
+          name: 'repository',
+          description: 'Enter repository name',
+          required: true
+      }, {
           name: 'username',
           description: 'Enter GitHub username',
           required: true
@@ -80,10 +84,6 @@ var main = function () {
           name: 'password',
           description: 'Enter GitHub password',
           hidden: true,
-          required: true
-        }, {
-          name: 'repository',
-          description: 'Enter repository name',
           required: true
       }], function (err, result) {
         performAction(phantomInstance, result.username, result.password, result.repository);
