@@ -39,7 +39,9 @@ $ node run.js -x get_links
 
 > `prompt: Enter URL to gather links from:`
 
-OR: $ node run.js -x get_links --url https://www.example.com
+OR:
+
+$ node run.js -x get_links --url https://www.example.com
 
 
 
@@ -47,4 +49,6 @@ $ node run.js -x take_screenshot
 
 > `prompt: Enter URL to take screenshot of:`
 
-OR: $ node run.js -x get_links --url https://www.example.com
+OR:
+
+$ node run.js -x get_links --url https://www.example.com
