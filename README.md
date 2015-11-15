@@ -27,11 +27,11 @@ Usage
 
 $ node run.js -x create_repo
 
+> `prompt: Enter repository name:`
+
 > `prompt: Enter GitHub username:`
 
 > `prompt: Enter GitHub password: (does not display)`
-
-> `prompt: Enter repository name:`
 
 
 $ node run.js -x get_links
