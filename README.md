@@ -33,7 +33,7 @@ $ node run.js -x create_repo
 
 > `prompt: Enter GitHub password: (does not display)`
 
-
+============
 
 $ node run.js -x get_links
 
@@ -43,7 +43,7 @@ OR:
 
 $ node run.js -x get_links --url https://www.example.com
 
-
+============
 
 $ node run.js -x take_screenshot
 
