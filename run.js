@@ -1,7 +1,11 @@
 'use strict';
 
+/**
+ * Package dependencies
+ */
 var Horseman = require('node-horseman')
   , validUrl = require('valid-url')
+  , fs = require('fs')
   , prompt = require('prompt')
   , program = require('commander');
 
@@ -10,9 +14,16 @@ program
     .option('-x --action-to-perform [string]', 'The type of action to perform.')
     .parse(process.argv);
 
-var ACTIONS = ['create_repo', 'take_screenshot', 'get_links'];
+/**
+ * Path to the PhantomJS binary
+ */
 var PATH_TO_PHANTOM = '/usr/local/bin/phantomjs';
 
+/**
+ * Stores an array of actions support by this utility framework.
+ * Populated on script load based on files present in the 'actions' directory
+ */
+var supportedActions = [];
 
 /**
  * Loads a Horseman instance to facilitate interaction with PhantomJS
@@ -30,11 +41,11 @@ var loadPhantomInstance = function () {
     var phantomInstance = new Horseman(options);
     
     phantomInstance.on('consoleMessage', function (msg) {
-        console.log('PHANTOM LOG: ', msg);
+        console.log('Phantom page log: ', msg);
     });
 
     phantomInstance.on('error', function (msg) {
-        console.log('PHANTOM ERROR: ', msg);
+        console.log('Phantom page error: ', msg);
     });
 
     return phantomInstance;
@@ -46,9 +57,9 @@ var loadPhantomInstance = function () {
 var main = function () {
 
     if (!program.actionToPerform) {
-        throw new Error('An action must be specified. Valid actions: ', ACTIONS.join(', '));
-    } else if (ACTIONS.indexOf(program.actionToPerform) < 0) {
-        throw new Error('Invalid action specified. Valid actions: ', ACTIONS.join(', '));
+        throw 'An action must be specified. Supported actions include: ', supportedActions.join(', ');
+    } else if (supportedActions.indexOf(program.actionToPerform) < 0) {
+        throw 'Invalid action specified. Supported actions include: ', supportedActions.join(', ');
     } else {
         console.log('Performing action: ', program.actionToPerform);
     }
@@ -107,12 +118,21 @@ var main = function () {
 
         default:
             phantomInstance.close();
-            throw new Error('Invalid action specified. Valid actions: ', ACTIONS.join(', '));
+            throw 'Invalid action specified. Supported actions include: ', supportedActions.join(', ');
     }
 };
 
 /**
- * Runs immediately on script load
+ * Run immediately on script load to determine available actions and attempt to run the specified action
  */
-main();
+ (function () {
+    // Generate an array of supported actions based on the files present in the 'actions' directory
+    fs.readdir('./actions', function (err, files) {
+        
+        files.forEach(function (filename) {
+            supportedActions.push(filename.split('.')[0]);
+        });
 
+        main();
+    });
+ })();
