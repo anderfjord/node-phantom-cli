@@ -25,26 +25,26 @@ $ npm install
 Usage
 ============
 
-> $ node run.js -x create_repo
+$ node run.js -x create_repo
 
->> `prompt: Enter repository name:`
+> `prompt: Enter repository name:`
 
->> `prompt: Enter GitHub username:`
+> `prompt: Enter GitHub username:`
 
->> `prompt: Enter GitHub password: (does not display)`
-
-
-
-> $ node run.js -x get_links
-
->> `prompt: Enter URL to gather links from:`
-
-> $ node run.js -x get_links --url https://www.google.com
+> `prompt: Enter GitHub password: (does not display)`
 
 
 
-> $ node run.js -x take_screenshot
+$ node run.js -x get_links
 
->> `prompt: Enter URL to take screenshot of:`
+> `prompt: Enter URL to gather links from:`
 
-> $ node run.js -x get_links --url https://www.google.com
+$ node run.js -x get_links --url https://www.google.com
+
+
+
+$ node run.js -x take_screenshot
+
+> `prompt: Enter URL to take screenshot of:`
+
+$ node run.js -x get_links --url https://www.google.com
