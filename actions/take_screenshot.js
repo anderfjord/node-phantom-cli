@@ -1,7 +1,10 @@
 'use strict';
 
+/**
+ * Package dependencies
+ */
 var crypto = require('crypto')
-  , fs = require('fs')
+  , fs = require('fs');
 
 /**
  * @param Horseman phantomInstance
@@ -10,8 +13,10 @@ var crypto = require('crypto')
 module.exports = function (phantomInstance, url) {
 
     if (!url || typeof url !== 'string') {
-        throw new Error('You must specify a url to take a screenshot');
+        throw 'You must specify a url to take a screenshot';
     }
+
+    console.log('Taking screenshot of: ', url);
 
     phantomInstance
         .open(url)

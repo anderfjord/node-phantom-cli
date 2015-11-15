@@ -6,6 +6,10 @@
  */
 module.exports = function (phantomInstance, url) {
 
+    if (!url || typeof url !== 'string') {
+        throw 'You must specify a url to gather links';
+    }
+
     console.log('Getting links from: ', url);
 
     phantomInstance

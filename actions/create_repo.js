@@ -8,7 +8,13 @@
  */
 module.exports = function (phantomInstance, username, password, repository) {
 
+    if (!username || !password || !repository) {
+        throw 'You must specify login credentials and a repository name';
+    }
+
     repository = repository.replace(/\s+/, '-');
+
+    console.log('Creating repository: ', repository);
 
     phantomInstance
         .open('https://github.com/login')
