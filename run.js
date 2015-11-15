@@ -12,6 +12,7 @@ var Horseman = require('node-horseman')
 program
   .version('1.0.0')
   .option('-x --action-to-perform [string]', 'The type of action to perform.')
+  .option('-u --url [string]', 'Optional url used by certain actions')
   .parse(process.argv);
 
 /**
@@ -68,6 +69,7 @@ var main = function () {
     , phantomInstance = loadPhantomInstance();
 
   prompt.start();
+  prompt.override = program;
 
   switch (program.actionToPerform) {
 
