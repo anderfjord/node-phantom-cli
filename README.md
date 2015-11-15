@@ -34,11 +34,13 @@ $ node run.js -x create_repo
 > `prompt: Enter GitHub password: (does not display)`
 
 
+
 $ node run.js -x get_links
 
 > `prompt: Enter URL to gather links from:`
 
 $ node run.js -x get_links --url https://www.google.com
+
 
 
 $ node run.js -x take_screenshot
