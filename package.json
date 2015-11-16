@@ -7,13 +7,11 @@
     "phantomjs"
   ],
   "bugs": {
-    "url": "",
-    "email": ""
+    "url": "https://github.com/wreckloose/node-phantom-util/issues"
   },
   "author": [
     {
-      "name": "",
-      "email": ""
+      "name": "Andrew Forth"
     }
   ],
   "dependencies": {
