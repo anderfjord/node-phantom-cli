@@ -13,11 +13,12 @@ Intro paragraph briefly explains what the tutorial demostrates: how to build a s
 
 ### Chaining Horseman methods for complex interactions
 - Focuses on chaining Horseman methods together to perform complex interactions.
-Discusses the “create repo” action.
+- Walks through the “create repo” action.
 
 ### Crawling to gather data
 - Focuses on techniques for gathering data vs interacting with a page.
-Discusses the “get links” and “take screenshot” actions.
+- Discusses the “get links” and “take screenshot” actions.
+- Thoughts on additional data gathering.
 
 ### Conclusion
 - Brief review of what was covered.
