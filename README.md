@@ -1,5 +1,5 @@
 
-Provides a utility framework for actions that involve crawling
+Provides a CLI micro-framework for actions that involve crawling
 
 Requirements
 ============
