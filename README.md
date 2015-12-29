@@ -51,4 +51,4 @@ $ node run.js -x take_screenshot
 
 OR:
 
-$ node run.js -x get_links --url https://www.example.com
+$ node run.js -x take_screenshot --url https://www.example.com
