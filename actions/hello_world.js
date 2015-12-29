@@ -8,10 +8,10 @@ module.exports = function (phantomInstance, url) {
 
   if (!url || typeof url !== 'string') {
     throw 'You must specify a url to ping';
+  } else {
+    console.log('Pinging url: ', url);
   }
-
-  console.log('Pinging url: ', url);
-
+  
   phantomInstance
     .open(url)
     .status()
